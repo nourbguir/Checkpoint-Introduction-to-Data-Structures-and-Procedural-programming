@@ -1,0 +1,40 @@
+ALGORITHM ex1
+VAR
+    T1 : ARRAY_OF INTEGER[4];
+    T2 : ARRAY_OF INTEGER[5];
+    i,j,,somme : INTEGER := 0;
+    rep: BOOLEAN;
+BEGIN
+
+    T1 := [3,1,7,9];
+    T2 := [2,4,1,9,3];
+    
+    FOR i FROM 0 TO T1.length-1; DO 
+        rep := false;
+        FOR j FROM 0 TO T2.length-1; DO
+            IF (T1[i] = T2[j]) THEN 
+                res := true;
+            END_IF
+        END_FOR
+        IF NOT res THEN 
+            somme := somme + T1[i];
+        END_IF
+
+    END_FOR
+
+    FOR j FROM 0 TO T2.length-1;DO 
+        res := false;
+        FOR i FROM 0 TO T1.length-1; DO
+            IF (T2[j] = T1[i]) THEN 
+                rep := true;
+            END_IF
+        END_FOR
+        IF NOT res THEN 
+            somme := somme + T1[i];
+        END_IF
+
+    END_FOR
+
+    Write("somme");
+
+END

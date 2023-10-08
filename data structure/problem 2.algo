@@ -1,0 +1,40 @@
+
+PROCEDURE dot_product(v1,v2:ARRAY_OF INTEGER[], VAR x : INTEGER)
+VAR 
+    i : INTEGER;
+BEGIN
+    IF(v1.length = v2.length) THEN
+        FOR i FROM 0 TO v1.length DO
+            x := x + v1[i] * vec2[i];
+        END_FOR
+        Write("The Dot Product of your vectors is ",x);
+    ELSE
+        Write("Vector length not equale");
+    END_IF
+END
+
+ALGORITHM DOT_PRODUCT
+VAR
+    V1,V2 : ARRAY_OF INTEGER[100];
+    x,n,m,i : INTEGER := 0 ; 
+BEGIN
+    Write("Please enter the size of the first vector");
+    Read(n);
+    FOR i FROM 0 TO n1 DO
+        Read(V1[i])
+    END_FOR
+
+    Write("Please enter the size of the secend vector");
+    Read(m);
+    FOR i FROM 0 TO n2 DO
+        Read(V2[i])
+    END_FOR
+
+    dot_product(V1,V2,x);
+
+    IF (x = 0) THEN
+        Write("the two vector  are orthogonal");
+    ELSE
+        Write("the two vecto are not orthogonal");
+    END_IF
+
